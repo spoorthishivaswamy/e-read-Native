@@ -11,7 +11,7 @@ def home():
 def upload():
     try:
         files = request.files["infile"]
-        tgt_lang = "ja"
+        tgt_lang = request.form['tgtlang']
         files.save(files.filename)
         fname = files.filename
         pdfObj = open(fname, 'rb')

@@ -1,13 +1,15 @@
-import requests,json
+import requests,json,configparser
 import azure.cognitiveservices.speech as speechsdk
 
-speech_key, service_region = "1553bca817174d4592e527c8af58d4e2", "eastus"
+config = configparser.ConfigParser()
+config.read('env.ini')
+speech_key, service_region = config['general']['speech_key'], config['general']['speech_region']
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
 
 headers = {
-    'Ocp-Apim-Subscription-Key': '79658f3fc6614494bbc6d6e9bc66caba',
+    'Ocp-Apim-Subscription-Key': config['general']['translate_key'],
     'Content-Type': 'application/json',
-    'Ocp-Apim-Subscription-Region': 'centralindia'
+    'Ocp-Apim-Subscription-Region': config['general']['translate_region']
   }
 def call_translate(text,tgt_lang):
   translate_url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to="+tgt_lang
