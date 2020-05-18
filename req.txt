@@ -1,3 +1,5 @@
 flask
 PyPDF2
 azure-cognitiveservices-speech
+requests
+configparser
