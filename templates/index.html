@@ -77,7 +77,11 @@
         <input type="file" name="infile">
         <input type="submit">
       </form>
-      <p id="result">{{ result }}</p>
+      <audio controls>
+        <source src="/voice.wav"  type="audio/wav">
+        Your browser does not support the audio tag.
+      </audio>
+      <p>{{ text }}</p>
     </div>
   </div>
   <footer>
