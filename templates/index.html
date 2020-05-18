@@ -1,11 +1,89 @@
+<!DOCTYPE html>
 <html>
-    <form action="/upload" enctype = "multipart/form-data" method="post">
+<head>
+  <meta charset="utf-8">
+  <title>e-ReadNative</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+</head>
+<style>
+  body {
+    background-color: aliceblue;
+  }
+
+  .title {
+    text-align: center;
+    color: black;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .desc {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .intro {
+    font-size: 30px;
+    padding: .9in;
+    color: black;
+  }
+
+  .form {
+    width: 600px;
+    height: 400px;
+    margin: .9in;
+    text-align: center;
+    font-size: 35px;
+    color: black;
+    ;
+  }
+
+  .upload {
+    width: 300px;
+    height: 250px;
+    border: 6px dotted black;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    color: black;
+    padding-top: 100px;
+  }
+</style>
+
+<body>
+  <div class="title">
+    <h1>e-ReadNative</h1>
+  </div>
+  <div class="desc">
+    <div class="intro">
+      <p> e-ReadNative aims to read and extract text from a pdf , translate it to the user’s preferred Indic language
+        using translation api’s . Users can now read the document in the preferred language or hear the audio generated
+        from the document using Text to speech.
+      </p>
+    </div>
+    <div class="form">
+      <p>upload your file here</p>
+      <form id="form" action="/upload" enctype="multipart/form-data" method="post">
         <select class="form-control" id="tgtlang" name="tgtlang">
-            <option value="it">Italian</option>
-            <option value="ja">Japanese</option>
-            <option value="kn">Kannada</option>
+          <option value="it">Italian</option>
+          <option value="ja">Japanese</option>
+          <option value="kn">Kannada</option>
         </select>
         <input type="file" name="infile">
         <input type="submit">
-    </form>
+      </form>
+      <p id="result">{{ result }}</p>
+    </div>
+  </div>
+  <footer>
+    <p>© Maintained by so and so</p>
+  </footer>
+
+</body>
+
 </html>
