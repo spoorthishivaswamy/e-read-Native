@@ -1,69 +1,60 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>e-ReadNative</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
 </head>
 <style>
   body {
-    background-color: aliceblue;
-  }
-
-  .title {
-    text-align: center;
-    color: black;
-    font-family: 'Playfair Display', serif;
+    background-color: black;
+    font-family: 'DM Mono', monospace;
+    color: aliceblue;
   }
 
   .desc {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    font-family: 'Playfair Display', serif;
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .intro {
     font-size: 30px;
-    padding: .9in;
-    color: black;
   }
 
   .form {
-    width: 600px;
-    height: 400px;
-    margin: .9in;
     text-align: center;
-    font-size: 35px;
-    color: black;
-    ;
   }
 
-  .upload {
-    width: 300px;
-    height: 250px;
-    border: 6px dotted black;
-    margin: 0 auto;
-    border-radius: 4px;
+  input[type=submit],
+  input[type=file] {
+    background-color: black;
+    padding: 16px 32px;
+    border: 1px aliceblue;
+    border-style: double;
+    color: aliceblue;
+    font-family: 'DM Mono', monospace;
   }
 
-  footer {
-    display: flex;
-    justify-content: center;
-    color: black;
-    padding-top: 100px;
+  .form-control {
+    background-color: black;
+
+    border: 1px aliceblue;
+    border-style: double;
+    color: aliceblue;
+    font-family: 'DM Mono', monospace;
+    height: 50px;
+    width: 100px;
   }
 </style>
 
 <body>
-  <div class="title">
-    <h1>e-ReadNative</h1>
-  </div>
   <div class="desc">
     <div class="intro">
       <p> e-ReadNative aims to read and extract text from a pdf , translate it to the user’s preferred Indic language
-        using translation api’s . Users can now read the document in the preferred language or hear the audio generated
-        from the document using Text to speech.
+        using translation api’s .
       </p>
     </div>
     <div class="form">
@@ -74,20 +65,15 @@
           <option value="ja">Japanese</option>
           <option value="kn">Kannada</option>
         </select>
-        <input type="file" name="infile">
+        <input type="file" name="infile" class="file">
         <input type="submit">
       </form>
       <audio controls>
-        <source src="/voice.wav"  type="audio/wav">
+        <source src="audiofile"  type="audio/wav">
         Your browser does not support the audio tag.
       </audio>
-      <p>{{ text }}</p>
+      <p>{{ text }}</p> -->
     </div>
   </div>
-  <footer>
-    <p>© Maintained by so and so</p>
-  </footer>
-
 </body>
-
 </html>
