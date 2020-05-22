@@ -26,7 +26,7 @@ def upload():
         pageObj = pdfReader.getPage(0)
         result = call_translate(pageObj.extractText(),tgt_lang)
         pdfObj.close()
-        return render_template("index.html",filename = result[0]['filename'],text = result[0]['translations'][0]['text'])
+        return render_template("view.html",filename = result[0]['filename'],text = result[0]['translations'][0]['text'])
     except Exception as e:
         print(e)
         return "Error"
