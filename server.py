@@ -9,7 +9,10 @@ def home():
 
 @app.route("/audiofile",methods=["GET"])
 def afile():
-    return send_file("voice.wav",attachment_filename="voice.wav")
+    try:
+        return send_file("voice.wav",attachment_filename="voice.wav")
+    except Exception as e:
+        print(e)
 
 @app.route("/upload",methods=["POST"])
 def upload():
