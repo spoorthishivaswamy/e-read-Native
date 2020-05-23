@@ -60,11 +60,13 @@
       <p>upload your file here</p>
       <form id="form" action="/upload" enctype="multipart/form-data" method="post">
         <select class="form-control" id="tgtlang" name="tgtlang">
+          <option value="hi">Hindi</option>
+          <option value="ta">Tamil</option>
+          <option value="te">Telugu</option>
           <option value="it">Italian</option>
           <option value="ja">Japanese</option>
-          <option value="kn">Kannada</option>
         </select>
-        <input type="file" name="infile" class="file">
+        <input type="file" name="infile" accept=".pdf" required class="file">
         <input type="submit">
       </form>
     </div>

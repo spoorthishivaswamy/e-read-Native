@@ -1,13 +1,14 @@
 from flask import Flask,render_template,request,send_file
-import PyPDF2
+import PyPDF2,os
 from utils import *
 app = Flask(__name__)
 
 @app.route("/",methods=["GET"])
 def home():
+    os.system("rm voice.wav")
     return render_template("index.html")
 
-@app.route("/audiofile",methods=["GET"])
+@app.route("/audiofile")
 def afile():
     try:
         return send_file("voice.wav",attachment_filename="voice.wav")
