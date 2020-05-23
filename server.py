@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/",methods=["GET"])
 def home():
-    os.system("rm voice.wav")
+    os.system("rm static/voice.wav")
     return render_template("index.html")
 
 @app.route("/audiofile")

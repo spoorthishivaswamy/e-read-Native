@@ -4,25 +4,10 @@
   <meta charset="utf-8">
   <title>e-ReadNative</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/index.css') }}" type= "text/css" rel="stylesheet">
 </head>
-<style>
-  body {
-    background-color: black;
-    font-family: 'DM Mono', monospace;
-    color: aliceblue;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    font-family: 'DM Mono', monospace;
-    font-size: 22px;
-    border: 1px aliceblue;
-    border-style: double;
-    transform: translate(-50%, -50%);
-    padding: .3in;
-  }
-</style>
 
-<body>
+<body id="viewbody">
   <audio controls>
     <source src="{{ url_for('static', filename=filename) }}" type="audio/wav">
   </audio>
