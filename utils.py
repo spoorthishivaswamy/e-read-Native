@@ -34,5 +34,5 @@ def call_tts(text,tgt_lang):
   body = ElementTree.tostring(xml_body)
   result = synthesizer.speak_ssml(body.decode("utf-8"))
   stream = speechsdk.AudioDataStream(result)
-  stream.save_to_wav_file("voice.wav")
+  stream.save_to_wav_file("static/voice.wav")
   return "voice.wav"

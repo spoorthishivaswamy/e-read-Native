@@ -24,7 +24,7 @@
 
 <body>
   <audio controls>
-    <source src="audiofile" type="audio/wav">
+    <source src="{{ url_for('static', filename=filename) }}" type="audio/wav">
   </audio>
   <p>{{ text }}</p>
 </body>
