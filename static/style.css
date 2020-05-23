@@ -1,0 +1,58 @@
+#viewbody {
+  background-color: black;
+  font-family: 'DM Mono', monospace;
+  color: aliceblue;
+}
+
+#audio{
+  position: relative;
+  left: 36%;
+  font-family: 'DM Mono', monospace;
+  font-size: 22px;
+  padding: .3in;
+}
+
+#res{
+  padding: .2in;
+}
+
+#indexbody {
+  background-color: black;
+  font-family: 'DM Mono', monospace;
+  color: aliceblue;
+}
+
+.desc {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.intro {
+  font-size: 30px;
+}
+
+.form {
+  text-align: center;
+}
+
+input[type=submit],
+input[type=file] {
+  background-color: black;
+  padding: 16px 32px;
+  border: 1px aliceblue;
+  border-style: double;
+  color: aliceblue;
+  font-family: 'DM Mono', monospace;
+}
+
+.form-control {
+  background-color: black;
+  border: 1px aliceblue;
+  border-style: double;
+  color: aliceblue;
+  font-family: 'DM Mono', monospace;
+  height: 50px;
+  width: 100px;
+}

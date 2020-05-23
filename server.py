@@ -8,13 +8,6 @@ def home():
     os.system("rm static/voice.wav")
     return render_template("index.html")
 
-@app.route("/audiofile")
-def afile():
-    try:
-        return send_file("voice.wav",attachment_filename="voice.wav")
-    except Exception as e:
-        print(e)
-
 @app.route("/upload",methods=["POST"])
 def upload():
     try:

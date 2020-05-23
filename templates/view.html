@@ -4,14 +4,13 @@
   <meta charset="utf-8">
   <title>e-ReadNative</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
-  <link href="{{ url_for('static', filename='css/index.css') }}" type= "text/css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='style.css') }}" type= "text/css" rel="stylesheet">
 </head>
-
 <body id="viewbody">
-  <audio controls>
+  <audio controls id="audio">
     <source src="{{ url_for('static', filename=filename) }}" type="audio/wav">
   </audio>
-  <p>{{ text }}</p>
+  <p id="res">{{ text }}</p>
 </body>
 
 </html>
