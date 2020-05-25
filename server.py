@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/",methods=["GET"])
 def home():
-    os.system("rm static/voice.wav")
+    os.system("rm static/*.wav")
     return render_template("index.html")
 
 @app.route("/upload",methods=["POST"])
@@ -20,9 +20,10 @@ def upload():
         pageObj = pdfReader.getPage(0)
         result = call_translate(pageObj.extractText(),tgt_lang)
         pdfObj.close()
+        print("Translated successfully")
         return render_template("view.html",filename = result[0]['filename'],text = result[0]['translations'][0]['text'])
     except Exception as e:
-        print(e)
+        print("Error while translating :"+str(e))
         return "Error"
 
 if __name__ == "__main__":

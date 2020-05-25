@@ -1,4 +1,4 @@
-import requests,json,configparser
+import requests,json,configparser,time
 import azure.cognitiveservices.speech as speechsdk
 from xml.etree import ElementTree
 
@@ -8,7 +8,7 @@ speech_key, service_region = config['general']['speech_key'], config['general'][
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
 
 tts_lang = {"hi":"hi-IN","ta":"ta-IN","te":"te-IN","it":"it-IT","ja":"ja-JP"}
-tts_voice = {"hi":"hi-IN-Kalpana-Apollo","ta":"ta-IN-Valluvar","te":"te-IN-Chitra","it":"it-IT-Cosimo-Apollo","jp":"ja-JP-Ayumi-Apollo"}
+tts_voice = {"hi":"hi-IN-Kalpana-Apollo","ta":"ta-IN-Valluvar","te":"te-IN-Chitra","it":"it-IT-Cosimo-Apollo","ja":"ja-JP-Ayumi-Apollo"}
 headers = {
     'Ocp-Apim-Subscription-Key': config['general']['translate_key'],
     'Content-Type': 'application/json',
@@ -34,5 +34,7 @@ def call_tts(text,tgt_lang):
   body = ElementTree.tostring(xml_body)
   result = synthesizer.speak_ssml(body.decode("utf-8"))
   stream = speechsdk.AudioDataStream(result)
-  stream.save_to_wav_file("static/voice.wav")
-  return "voice.wav"
+  audio_filename = str(time.time())+".wav"
+  stream.save_to_wav_file("static/"+audio_filename)
+  print("Audio file saved to: "+audio_filename,"lang: "+tgt_lang)
+  return audio_filename
