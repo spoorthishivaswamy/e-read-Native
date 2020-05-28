@@ -6,7 +6,6 @@
 instance/*
 !instance/.gitignore
 .webassets-cache
-*.pdf
 *.wav
 ### Flask.Python Stack ###
 # Byte-compiled / optimized / DLL files
