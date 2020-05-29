@@ -9,7 +9,7 @@
 
  ## How to use
  - Open ```env.ini``` and add your microsoft's azure cognitive services keys and region
- - change  port number to your desired number in server.py ```app.run(host='0.0.0.0',port=80)```
+ - change port number to your desired number in server.py ```app.run(host='0.0.0.0',port=80)``` if faced any restrictions
  - ```pip3 install req.txt```
  - ```python3 server.py```
  - open ```http://localhost:desired-port-number```  on your browser
